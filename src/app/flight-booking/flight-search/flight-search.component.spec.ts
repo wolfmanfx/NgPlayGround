@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { FlightSearchComponent } from './flight-search.component';
 import { Observable, of } from 'rxjs';
 import { Flight } from '../../entities/flight';
@@ -14,7 +14,7 @@ describe('FlightSearchComponent', () => {
   let component: FlightSearchComponent;
   let fixture: ComponentFixture<FlightSearchComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
       declarations: [FlightSearchComponent],
       providers: [

@@ -19,7 +19,9 @@ const DEBUG = false;
       HttpClientModule,
       FormsModule,
       //FlightBookingModule,
-      RouterModule.forRoot(APP_ROUTES)
+      RouterModule.forRoot(APP_ROUTES, {
+         enableTracing: false
+      })
    ],
    declarations: [
       AppComponent,

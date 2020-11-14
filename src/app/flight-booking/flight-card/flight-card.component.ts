@@ -13,23 +13,23 @@ export class FlightCardComponent implements OnInit, OnChanges, OnDestroy {
   @Output() selectedChange = new EventEmitter<boolean>();
 
   constructor() {
-    console.debug('ctor', this.selected, this.item);
+   // console.debug('ctor', this.selected, this.item);
   }
 
   ngOnInit() {
-    console.debug('init', this.selected, this.item);
+    //console.debug('init', this.selected, this.item);
 
-    setTimeout(() => this.selectedChange.next(true), 0);
+    //setTimeout(() => this.selectedChange.next(true), 0);
 
   }
 
   ngOnChanges(changes) {
-    console.debug('changes', this.selected, this.item);
-    console.debug('changes details:', changes);
+    //console.debug('changes', this.selected, this.item);
+    //console.debug('changes details:', changes);
   }
 
   ngOnDestroy() {
-    console.debug('destroy', this.selected, this.item);
+    //console.debug('destroy', this.selected, this.item);
   }
 
   select(): void {

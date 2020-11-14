@@ -9,11 +9,14 @@ import { FlightCardComponent } from './flight-card/flight-card.component';
 import { RouterModule } from '@angular/router';
 import { FLIGHT_ROUTES } from './flight-book.routes';
 import { PassengerSearchComponent } from './passenger-search/passenger-search.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NoopInterceptor } from './noop.interceptor';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
+    HttpClientModule,
     RouterModule.forChild(FLIGHT_ROUTES)
   ],
   declarations: [
@@ -24,18 +27,23 @@ import { PassengerSearchComponent } from './passenger-search/passenger-search.co
   ],
   providers: [
     {
-       provide: FlightService,
-       useClass: DefaultFlightService,
-       // useFactory: (http: HttpClient) => {
-       //    if (DEBUG) {
-       //       return new DummyFlightService(null);
-       //    } else {
-       //       return new DefaultFlightService(http);
-       //    }
-       // },
-       // deps: [HttpClient]
+      provide: FlightService,
+      useClass: DefaultFlightService,
+      // useFactory: (http: HttpClient) => {
+      //    if (DEBUG) {
+      //       return new DummyFlightService(null);
+      //    } else {
+      //       return new DefaultFlightService(http);
+      //    }
+      // },
+      // deps: [HttpClient]
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: NoopInterceptor
     }
- ],
+  ],
   exports: [
     FlightSearchComponent
   ]
