@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { FlightCardComponent } from './flight-card.component';
+import { MockPipe } from 'ng-mocks';
+import { CityPipe } from '../../shared/pipes/city.pipe';
 
 describe('FlightCardComponent', () => {
   let component: FlightCardComponent;
@@ -11,7 +13,10 @@ describe('FlightCardComponent', () => {
 
   beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FlightCardComponent]
+      declarations: [
+        FlightCardComponent,
+        MockPipe(CityPipe)
+      ]
     })
       .compileComponents();
   }));

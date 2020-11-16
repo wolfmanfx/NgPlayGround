@@ -46,7 +46,7 @@ export class FlightSearchComponent implements OnInit {
     const httpParams = new HttpParams().set('from', this.from).set('to', this.to);
     const headers = new HttpHeaders().set('Accept', 'application/json');
 
-    /*
+    
     this.http.get<Flight[]>(this.apiUrl, { params: httpParams, headers: headers })
       .subscribe(
         flights => {
@@ -56,7 +56,7 @@ export class FlightSearchComponent implements OnInit {
           console.error(err);
         })
 
-*/
+
 
 /*
     this.http.get(this.apiUrl, { observe: 'response', responseType: 'text', params: httpParams, headers: headers})
