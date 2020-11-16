@@ -28,9 +28,9 @@ module.exports = function(config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ['Chrome', 'ChromeHeadlessNoSandbox'],
+        browsers: ['Chrome', 'ChromeHeadlessCI'],
         customLaunchers: {
-            ChromeHeadlessNoSandbox: {
+            ChromeHeadlessCI: {
                 base: "ChromeHeadless",
                 flags: [
                     "--no-sandbox", // required to run without privileges in docker

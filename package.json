@@ -5,7 +5,8 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve -o",
-        "debugTests": "ng test --browsers Chrome_with_debugging",
+        "debugTests": "ng test --browsers=ChromeHeadlessCI",
+        "ciTests": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
