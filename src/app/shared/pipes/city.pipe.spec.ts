@@ -1,6 +1,3 @@
-/* tslint:disable:no-unused-variable */
-
-import { TestBed } from '@angular/core/testing';
 import { CityPipe } from './city.pipe';
 
 describe('Pipe: Citye', () => {
