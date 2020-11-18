@@ -61,21 +61,14 @@
 
         <form #f="ngForm" novalidate cycleFlight targetCtrlName="to" srcCtrlName="from">
 
-            <div *ngIf="f?.errors" class="alert alert-danger">
 
-                {{f?.errors | json}}
-            </div>
             <div class="form-group">
                 <label>From:</label>
-                <input name="from" async-city forbiddenCity forbiddenCityName="Leoben" #fromCtrl="ngModel" type="text" [(ngModel)]="from" class="form-control" required minlength="3">
+                <input name="from" forbiddenCity forbiddenCityName="Leoben" #fromCtrl="ngModel" type="text" [(ngModel)]="from" class="form-control" required minlength="3">
             </div>
 
 
-            {{f?.pending | json}}
             <div *ngIf="fromCtrl.invalid && (fromCtrl.dirty || fromCtrl.touched)" class="alert alert-danger">
-                <div *ngIf="fromCtrl.errors['async-city']">
-                    async-city
-                </div>
 
                 <div *ngIf="fromCtrl.errors.required">
                     Name is required.
@@ -87,11 +80,8 @@
                     Name cannot be Leoben.
                 </div>
             </div>
-            <div *ngIf="!f?.controls['from']?.valid">
-                {{fromCtrl.errors | json}}
-            </div>
 
-            {{f.controls['from']?.getError()}} {{f.value | json}}
+
             <div class="form-group">
                 <label>To:</label>
                 <input name="to" [(ngModel)]="to" class="form-control">
@@ -113,12 +103,12 @@
         [selected]="basket[f.id]"
         (selectedChange)="basket[f.id] = $event"></flight-card> -->
 
-        <!-- <flight-card class="col-lg-3 col-md-4 col-sm-6 col-xs-12" [item]="f" [(selected)]="basket[f.id]"></flight-card>
+        <flight-card class="col-lg-3 col-md-4 col-sm-6 col-xs-12" [item]="f" [(selected)]="basket[f.id]"></flight-card>
 
-!-->
+
     </div>
 </div>
-
+<!--
 <div class="card">
 
     <table class="table table-contensed" *ngIf="flights.length > 0">
@@ -141,8 +131,8 @@
             </td>
         </tr>
     </table>
-
 </div>
+!-->
 
 <div class="card">
     <div class="content">

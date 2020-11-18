@@ -6,8 +6,6 @@ import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlightService, DefaultFlightService } from './flight-search/flight.service';
 import { FlightCardComponent } from './flight-card/flight-card.component';
-import { RouterModule } from '@angular/router';
-import { FLIGHT_ROUTES } from './flight-book.routes';
 import { PassengerSearchComponent } from './passenger-search/passenger-search.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NoopInterceptor } from './noop.interceptor';
@@ -20,8 +18,7 @@ import { AsyncCityValidatorDirective } from './flight-search/validation/async-ci
     CommonModule,
     SharedModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(FLIGHT_ROUTES)
+    ReactiveFormsModule
   ],
   declarations: [
     FlightBookingComponent,
@@ -52,7 +49,7 @@ import { AsyncCityValidatorDirective } from './flight-search/validation/async-ci
     }
   ],
   exports: [
-    FlightSearchComponent
+    FlightSearchComponent,
   ]
 })
 export class FlightBookingModule { }

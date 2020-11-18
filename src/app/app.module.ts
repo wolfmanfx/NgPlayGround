@@ -7,8 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { APP_ROUTES } from './app.routes';
 import { HomeComponent } from './home/home.component';
+import { FlightBookingModule } from './flight-booking/flight-booking.module';
 const DEBUG = false;
 
 @NgModule({
@@ -17,10 +17,8 @@ const DEBUG = false;
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
-      //FlightBookingModule,
-      RouterModule.forRoot(APP_ROUTES, {
-         enableTracing: false
-      })
+      FlightBookingModule,
+
    ],
    declarations: [
       AppComponent,
