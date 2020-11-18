@@ -7,7 +7,7 @@
 
     <div class="main-panel">
         <navbar-cmp></navbar-cmp>
-
+        <h1 data-ut="main-title">{{title}}</h1>
         <div class="content">
             <!--- <flight-search></flight-search> -->
 
@@ -15,3 +15,5 @@
         </div>
 
     </div>
+
+    <button data-ut="setBtn" (click)="setTitle()">Set Title</button>

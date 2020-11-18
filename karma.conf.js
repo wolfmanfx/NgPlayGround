@@ -23,12 +23,13 @@ module.exports = function(config) {
         angularCli: {
             environment: 'dev'
         },
-        reporters: ['progress', 'kjhtml'],
+        //reporters: ['progress', 'spec', 'kjhtml'],
+        reports: ['progress', 'kjhtml'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ['Chrome', 'ChromeHeadlessCI'],
+        browsers: ['Chrome'],
         customLaunchers: {
             ChromeHeadlessCI: {
                 base: "ChromeHeadless",

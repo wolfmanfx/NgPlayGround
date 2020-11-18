@@ -7,4 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent  {
   title = 'Hello World!!';
+
+  setTitle() {
+    new Promise((resolve, reject) => {
+      resolve('New Title')
+    }).then((str: string) => {
+      this.title = str;
+    });
+  }
 }

@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NoopInterceptor } from './noop.interceptor';
 import { ForbiddenCityValidator } from './flight-search/validation/forbidden-city.validator';
 import { CycleFlightValidator } from './flight-search/validation/cycle-flight.validator';
+import { AsyncCityValidatorDirective } from './flight-search/validation/async-city.validator';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { CycleFlightValidator } from './flight-search/validation/cycle-flight.va
     FlightCardComponent,
     PassengerSearchComponent,
     ForbiddenCityValidator,
-    CycleFlightValidator
+    CycleFlightValidator,
+    AsyncCityValidatorDirective
   ],
   providers: [
     {
