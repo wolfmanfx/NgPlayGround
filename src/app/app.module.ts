@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FlightBookingModule } from './flight-booking/flight-booking.module';
+import { FLIGHT_API_URL } from './flight-booking/flight.tokens';
 const DEBUG = false;
 
 @NgModule({
@@ -26,6 +27,9 @@ const DEBUG = false;
       NavbarComponent,
       HomeComponent
    ],
+   providers: [{
+      provide: FLIGHT_API_URL, useValue: 'http://www.angular.at/api/flight'
+   }],
    bootstrap: [
       AppComponent
    ]

@@ -2,7 +2,7 @@ import { ComponentFixture, fakeAsync, getTestBed, inject, async, TestBed } from 
 import { FlightSearchComponent } from './flight-search.component';
 import { Observable, of } from 'rxjs';
 import { Flight } from '../../entities/flight';
-import { FlightService } from './flight.service';
+import { DefaultFlightService, FlightService } from './flight.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 import { FLIGHT_API_URL } from '../flight.tokens';
@@ -47,7 +47,7 @@ describe('FlightSearchComponent should find ', () => {
       providers: [
         {
           provide: FlightService,
-          useValue: mockFlightService
+          useClass: DefaultFlightService
         },
         {
           provide: FLIGHT_API_URL,

@@ -4,7 +4,7 @@ import { FlightBookingComponent } from './flight-booking.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { SharedModule } from '../shared/shared.module';
-import { FlightService, DefaultFlightService } from './flight-search/flight.service';
+import { FlightService, DefaultFlightService, DummyFlightService } from './flight-search/flight.service';
 import { FlightCardComponent } from './flight-card/flight-card.component';
 import { PassengerSearchComponent } from './passenger-search/passenger-search.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';

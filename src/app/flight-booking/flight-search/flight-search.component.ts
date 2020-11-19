@@ -35,7 +35,7 @@ export class FlightSearchComponent implements OnInit, OnDestroy {
   // private http: HttpClient;
 
   constructor(private flightService: FlightService,
-    private http: HttpClient, @Inject(FLIGHT_API_URL) private apiUrl: string,
+    /*private http: HttpClient,*/ @Inject(FLIGHT_API_URL) private apiUrl: string,
     fb: FormBuilder) {
 
       /*
@@ -70,32 +70,11 @@ export class FlightSearchComponent implements OnInit, OnDestroy {
     const httpParams = new HttpParams().set('from', this.from).set('to', this.to);
     const headers = new HttpHeaders().set('Accept', 'application/json');
 
-    this.http.get<Flight[]>(this.apiUrl, { params: httpParams, headers: headers })
-    .pipe(takeUntil(this.ngUnsubscribe)).subscribe(
-        flights => {
-          this.flights = flights;
-        },
-        err => {
-          console.error(err);
-        })
 
-
-
-/*
-    this.http.get(this.apiUrl, { observe: 'response', responseType: 'text', params: httpParams, headers: headers})
-      .subscribe(resp => {
-        console.log(resp.body);
-        return JSON.parse(resp.body)
-      });
-
-      */
-  
-    /*
-      this.flightService.find(this.from, this.to).subscribe(
-        flights => { this.flights = flights; },
-        err => console.error('err', err)
-      );
-    */
+    this.flightService.find(this.from, this.to).subscribe(
+      flights => { this.flights = flights; },
+      err => console.error('err', err)
+    );
   }
 
   select(f: Flight): void {
